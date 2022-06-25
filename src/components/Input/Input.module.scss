@@ -1,0 +1,47 @@
+.Input_module {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1199px;
+    margin: 57px 0 57px 60px;
+    position: relative;
+
+    &__inp {
+        background: #E6E6E6;
+        border-radius: 20px 0 0 20px;
+        width: 961px;
+        height: 88px;
+        border: none;
+        font-family: 'Roboto', sans-serif;
+        font-size: 24px;
+        line-height: 28px;
+        color: rgba(0, 0, 0, 0.39);
+        padding-left: 61px;
+      }
+
+      &__btn {
+        width: 177px;
+        height: 90px;
+        position: absolute;
+        right: 0;
+        border-radius: 0 20px 20px 0;
+        background: #E6E6E6;
+        border: none;
+        font-family: 'Roboto', sans-serif;
+        font-size: 24px;
+        line-height: 28px;
+        cursor: pointer;
+      }
+
+      &__btn:hover {
+        background: #b4b3b3;
+      }
+
+      &__line {
+        border: 1px solid #00000063;
+        transform: rotate(-180deg);
+        height: 85px;
+        margin: 0;
+      }
+    
+}

@@ -1,0 +1,32 @@
+.PokemonCard {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+  font-size: 30px;
+
+  .Left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  a {
+    margin-top: 50px;
+    color: #806BFF;
+    font-size: 35px;
+    text-decoration: none;
+  }
+
+  .Right {
+    margin-left: 200px;
+
+    .TextBlock {
+      display: grid;
+      grid-template-columns: repeat(2, 350px);
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+}
