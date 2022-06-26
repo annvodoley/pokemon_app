@@ -1,7 +1,8 @@
 import {
+    ADD_CURRENT_POKEMON, ADD_POKEMON_ITEM,
     ADD_POKEMON_LIST,
     ADD_POKEMONS,
-    REQUEST_POKEMON_FAILURE,
+    REQUEST_POKEMON_FAILURE, REQUEST_POKEMON_ITEM_FAILURE, REQUEST_POKEMON_ITEM_LOADING, REQUEST_POKEMON_ITEM_SUCCESS,
     REQUEST_POKEMON_LOADING,
     REQUEST_POKEMON_SUCCESS
 } from "./types";
@@ -34,4 +35,27 @@ export const fetchPokemonApiAction = (list) => {
             .catch(() => dispatch({type: REQUEST_POKEMON_FAILURE}))
     }
 }
+
+export const addCurrentPokemonAction = (currentPokemon) => {
+    return {type: ADD_CURRENT_POKEMON, payload: currentPokemon}
+}
+
+
+// Input
+
+export const fetchPokemonItemApiAction = (name) => {
+    return dispatch => {
+        dispatch({type: REQUEST_POKEMON_ITEM_LOADING})
+        fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
+            .then((response) => response.json())
+            .then(res => {
+                dispatch({type: REQUEST_POKEMON_ITEM_SUCCESS})
+                dispatch({type: ADD_POKEMON_ITEM, payload: res})
+            })
+            .catch(() => dispatch({type: REQUEST_POKEMON_ITEM_FAILURE}))
+    }
+}
+
+
+
 

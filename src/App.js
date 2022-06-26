@@ -12,6 +12,7 @@ const App = () => {
 
     const dispatch = useDispatch();
     const pokemonsList = useSelector(state => state.pokemonReducer.pokemonList)
+
     useEffect(() => {
         dispatch(fetchPokemonListApiAction())
     }, [])
@@ -26,7 +27,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/home" element={<Home/>}/>
-                <Route path="/pokemon" element={<PokemonCard/>}/>
+                <Route path="/:pokeid" element={<PokemonCard/>}/>
             </Routes>
         </div>
     );
